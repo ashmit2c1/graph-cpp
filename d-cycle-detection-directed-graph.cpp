@@ -11,7 +11,9 @@ bool checkForCycle(int node,vector<bool>&visited,vector<bool>&path,vector<int>ad
         if(visited[neighbor]==false){
             if(checkForCycle(neighbor,visited,path,adj)==true){return true;}
         }
-    }return false;
+    }
+    path[node]=false;
+    return false;
 }
 bool isCycle(int V,vector<int>adj[]){
     vector<bool>visited(V,false);vector<bool>path(V,false);
